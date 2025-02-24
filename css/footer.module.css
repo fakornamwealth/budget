@@ -3,10 +3,9 @@
   position: fixed;
   border-top: 2px solid var(--color-bg-variant2);
   background: var(--color-bg);
-  object-fit: cover;
-  padding: 3rem;
+  object-fit: co5
   width: 100%;
-  background: rgb(239 246 255);
+  background: rgb(157, 190, 233);
   border-top: 1px solid gray;
   text-align: center;
   font-size: 0.9rem;
@@ -16,7 +15,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: 3rem;
   margin: 0 auto 3rem;
 }
 

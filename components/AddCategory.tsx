@@ -1,10 +1,10 @@
-'use client';
-import { updateCategory } from '@/app/actions/categories';
-import type { category } from '@/types/category';
-import { useFormState } from 'react-dom';
-import { Input, NumericTextBox } from '@progress/kendo-react-inputs';
-import { Checkbox } from '@progress/kendo-react-inputs';
-import { useState, useEffect } from 'react';
+"use client";
+import { updateCategory } from "@/app/actions/categories";
+import type { category } from "@/types/category";
+import { useFormState } from "react-dom";
+import { Input, NumericTextBox } from "@progress/kendo-react-inputs";
+import { Checkbox } from "@progress/kendo-react-inputs";
+import { useState, useEffect } from "react";
 
 export default function AddCategory({
   budgetId,
@@ -28,7 +28,7 @@ export default function AddCategory({
     });
   };
 
-  const initialState = { message: '' };
+  const initialState = { message: "" };
 
   const [formState, formAction] = useFormState(updateCategory, initialState);
   const { name, isRecurring, amount, id } = categoryState;
@@ -40,11 +40,11 @@ export default function AddCategory({
     }
   }, [closeDialog, refresh, formState.message]);
 
-  if (modeState === 'Add' || modeState === 'Edit') {
+  if (modeState === "Add" || modeState === "Edit") {
     return (
       <div>
-        <div role='status'>{String(formState.message)}</div>
-        <form action={formAction} className=' m-2'>
+        <div role="status">{String(formState.message)}</div>
+        {/* <form action={formAction} className=' m-2'>
           <input type='hidden' name='id' value={id} />
           <Input
             type='text'
@@ -84,63 +84,63 @@ export default function AddCategory({
               className='p-2 rounded text-white items-center cursor-pointer transition transition-delay:300ms bg-blue-500 hover:bg-blue-600'
             />
           </div>
-        </form>
+        </form> */}
       </div>
     );
-  } else if (modeState === 'edit') {
+  } else if (modeState === "edit") {
     return (
       <>
         <form>
           <tr key={id}>
             <td>
               <input
-                type='text'
+                type="text"
                 onChange={handleChange}
                 value={name}
-                name='name'
+                name="name"
               />
             </td>
             <td>
               <input
-                type='number'
+                type="number"
                 onChange={handleChange}
                 value={amount}
-                name='amount'
+                name="amount"
               />
             </td>
             <td>
               <input
-                type='checkbox'
+                type="checkbox"
                 checked={isRecurring}
-                name='isRecurring'
+                name="isRecurring"
                 onChange={handleChange}
               />
             </td>
 
             <td>
-              <input type='submit' value='Update' />
+              <input type="submit" value="Update" />
             </td>
           </tr>
-          <input type='hidden' name='id' value={id} />
+          <input type="hidden" name="id" value={id} />
         </form>
       </>
     );
-  } else if (modeState === 'readonly') {
+  } else if (modeState === "readonly") {
     //we are readonly so make a table row
     return (
       <tr key={id}>
         <td>{name}</td>
-        <td>{amount}</td>
+        <td>${amount}</td>
         <td>
-          <input type='checkbox' disabled checked={isRecurring} />
+          <input type="checkbox" disabled checked={isRecurring} />
         </td>
         <td>
           <button
             onClick={(e) => {
-              setModeState('edit');
+              setModeState("edit");
             }}
           >
-            Edit
+            Edit button
           </button>
         </td>
       </tr>
