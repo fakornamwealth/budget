@@ -1,17 +1,16 @@
 .navContainer {
-  background: rgb(29 78 216);
+  background: rgb(32, 65, 155);
   height: 90px;
   position: sticky;
   top: 0;
   z-index: 9999;
-  box-shadow: 0 4px 2px -2px gray;
 }
 
 .navWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1ch;
   width: 100%;
 }
 .navLeft {
@@ -22,7 +21,7 @@
 
 .navLeftLinks > .navLeftLink {
   text-decoration: none;
-  transition: 300ms ease-in-out;
+  transition: 5s ease-in-out;
 }
 .navMiddle {
   display: flex;
@@ -31,8 +30,8 @@
 }
 
 .logo > img {
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   object-fit: cover;
   border-radius: 10%;
   border: 0.5px solid var(--color-primary);
