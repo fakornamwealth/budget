@@ -2,8 +2,8 @@
 import { updateCategory } from "@/app/actions/categories";
 import type { category } from "@/types/category";
 import { useFormState } from "react-dom";
-import { Input, NumericTextBox } from "@progress/kendo-react-inputs";
-import { Checkbox } from "@progress/kendo-react-inputs";
+//import { Input, NumericTextBox } from "@progress/kendo-react-inputs";
+//import { Checkbox } from "@progress/kendo-react-inputs";
 import { useState, useEffect } from "react";
 
 export default function AddCategory({
