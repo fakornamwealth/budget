@@ -1,10 +1,10 @@
-// "use client";
-// import * as sentry from "@sentry/nextjs";
-// import { loadStripe } from "@stripe/stripe-js";
+"use client";
+import * as sentry from "@sentry/nextjs";
+import { loadStripe } from "@stripe/stripe-js";
 
-// const stripePromise = loadStripe(
-//   process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
-// );
+const stripePromise = loadStripe(
+  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY as string
+);
 export default function CheckoutButton() {
   const handleCheckout = async () => {
     try {
